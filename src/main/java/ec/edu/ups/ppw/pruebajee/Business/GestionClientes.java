@@ -1,7 +1,5 @@
 package ec.edu.ups.ppw.pruebajee.Business;
 
-import java.util.List;
-
 import ec.edu.ups.ppw.pruebajee.DAO.ClienteDAO;
 import ec.edu.ups.ppw.pruebajee.Model.Cliente;
 import jakarta.ejb.Stateless;
@@ -23,8 +21,11 @@ public class GestionClientes {
 		return cliente;
 	}
 
-	public List<Cliente> getClientes() {
-		return daoCliente.getAll();
+	public Cliente getClientePorCedula(String cedula) {
+	    return daoCliente.getByCedula(cedula);
 	}
+
+
+
 
 }

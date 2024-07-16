@@ -18,19 +18,22 @@ public class Clientes {
 	
 	private Cliente cliente = new Cliente();//Se instancia pa que no sea null
 	
-	private List<Cliente> listado;
+	private Cliente listado;
 	
 	@PostConstruct
 	public void init() {
-		listado = gClientes.getClientes();
+		listado = gClientes.getClientePorCedula(null);
 	}
 	
-	public List<Cliente> getListado() {
+
+	public Cliente getListado() {
 		return listado;
 	}
-	public void setListado(List<Cliente> listado) {
+
+	public void setListado(Cliente listado) {
 		this.listado = listado;
 	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -46,7 +49,7 @@ public class Clientes {
 		this.gClientes = gClientes;
 	}
 
-	public String guardar() {
+	public String Consultar() {
 		System.out.println(this.cliente);
 		
 		try {
