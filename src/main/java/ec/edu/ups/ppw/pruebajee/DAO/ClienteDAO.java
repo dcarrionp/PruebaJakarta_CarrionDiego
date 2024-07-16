@@ -14,20 +14,6 @@ public class ClienteDAO {
 	
 	@PersistenceContext
 	private EntityManager em;
-
-	public void insert(Cliente cliente) {
-		em.persist(cliente);
-	}
-	
-	public void update(Cliente cliente) {
-		em.merge(cliente);
-	}
-	public void delete(String cedula) {
-		Cliente cliente = this.read(cedula);
-		if(cliente!=null) {
-			em.remove(cliente);
-		}
-	}
 	
 	public Cliente read(String cedula) {
 		Cliente cliente = em.find(Cliente.class, cedula);
