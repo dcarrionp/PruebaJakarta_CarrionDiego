@@ -42,7 +42,7 @@ public class ClienteDAO {
 	    try {
 	        return (Cliente) query.getSingleResult();
 	    } catch (NoResultException e) {
-	        return null; // o lanza una excepción o maneja el caso de no encontrar resultados según tu lógica
+	        return null; 
 	    }
 	}
 

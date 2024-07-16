@@ -8,9 +8,9 @@
 <body> 
 
 <h:form>
-	<h:inputText id="cedula" value="#{clientes.cliente.cedula}"/>
-	
-	<h:commandButton action="#{clientes.Consultar()}" value="Consultar"/>
+    <h:outputLabel for="cedula" value="Ingrese la cédula:" />
+    <h:inputText id="cedula" value="#{clientes.cedulaBusqueda}" />
+    <h:commandButton value="Buscar" action="#{clientes.Consultar()}" />
 </h:form>
 	
 </body> 

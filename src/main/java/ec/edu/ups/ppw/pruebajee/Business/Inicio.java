@@ -1,8 +1,6 @@
 package ec.edu.ups.ppw.pruebajee.Business;
 
 
-import java.util.List;
-
 import ec.edu.ups.ppw.pruebajee.DAO.ClienteDAO;
 import ec.edu.ups.ppw.pruebajee.Model.Cliente;
 import jakarta.annotation.PostConstruct;

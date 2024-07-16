@@ -7,26 +7,32 @@
 <h:head></h:head> 
 <body> 
 
-<h1>Listado</h1>
+<h:form>
+        <h1>Listado</h1>
+        
+        <h:dataTable value="#{clientes.listado}" var="cliente">
+            <h:column>
+                <f:facet name="header">Cédula</f:facet>
+                #{cliente.cedula}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nombre</f:facet>
+                #{cliente.nombre}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Correo</f:facet>
+                #{cliente.correo}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Teléfono</f:facet>
+                #{cliente.telefono}
+            </h:column>
+        </h:dataTable>
+
+        <h:commandButton action="#{clientes.volver}" value="Volver" />
+    </h:form>
 
 <h:form>
-<h:dataTable value = "#{clientes.listado}" var = "cliente">
-
-	<h:column>
-		<f:facet name="header">Cedula</f:facet>
-		#{cliente.cedula}
-	</h:column>
-	<h:column>
-		<f:facet name="header">Nombre</f:facet>
-		#{cliente.nombre}
-	</h:column>
-	<h:column>
-		<f:facet name="header">Telefono</f:facet>
-		#{cliente.telefono}
-	</h:column>
-
-</h:dataTable>
-
 
 
 <h:commandButton action="#{clientes.volver()}" value="Volver"/>
