@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity 
 public class Detalles {
@@ -15,7 +17,12 @@ public class Detalles {
 	@Column(name="consumos")
 	private String consumos;
 	@Column(name="deudas")
-	private String deudas;
+	private double deudas;
+	
+	@ManyToOne
+	@JoinColumn(name="cli_cedula")
+	private Cliente cli;
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -28,10 +35,10 @@ public class Detalles {
 	public void setConsumos(String consumos) {
 		this.consumos = consumos;
 	}
-	public String getDeudas() {
+	public double getDeudas() {
 		return deudas;
 	}
-	public void setDeudas(String deudas) {
+	public void setDeudas(double deudas) {
 		this.deudas = deudas;
 	}
 	
